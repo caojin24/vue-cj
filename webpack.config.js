@@ -24,6 +24,11 @@ module.exports = {
           // other vue-loader options go here
         }
       },
+      {  
+        test: /\.css$/,  
+        loader: 'style-loader!css-loader',
+        include: /node_modules/
+      },  
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -35,6 +40,11 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        include:/node_modules/
       }
     ]
   },
